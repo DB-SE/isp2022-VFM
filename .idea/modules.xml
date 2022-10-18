@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/isp2022-VFM.iml" filepath="$PROJECT_DIR$/.idea/isp2022-VFM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task1-graphs/task1-graphs.iml" filepath="$PROJECT_DIR$/task1-graphs/task1-graphs.iml" />
+    </modules>
+  </component>
+</project>
