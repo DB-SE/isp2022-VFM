@@ -1,9 +1,11 @@
+package graph;
+
 import java.util.Objects;
 
-public class Vertex {
+public class Node {
     String label;
 
-    public Vertex(String label) {
+    public Node(String label) {
         this.label = label;
     }
 
@@ -11,8 +13,8 @@ public class Vertex {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Vertex vertex = (Vertex) o;
-        return label.equals(vertex.label);
+        Node node = (Node) o;
+        return label.equals(node.label);
     }
 
     @Override
