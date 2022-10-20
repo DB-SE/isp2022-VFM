@@ -66,7 +66,9 @@ public class Weight {
             }
             while (!stack.empty()) {
                 Node node3 = stack.pop();
-                DFS(graph, visited, node3, goal);
+                Node node4 = DFS(graph, visited, node3, goal);
+                if (node4 != null)
+                    return node4;
             }
             return null;
         }
