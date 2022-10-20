@@ -1,7 +1,6 @@
 package graph;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Weight {
 
@@ -39,5 +38,37 @@ public class Weight {
             adjacencyVertices.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode.label + "(" + weight + "), "));
         });
         System.out.println();
+    }
+
+    protected Node search(Map<Node, Map<Node, Double>> graph, Node goal) {
+        Node someNode = graph.entrySet().iterator().next().getKey();
+        return DFS(graph, new ArrayList<>(), someNode, goal);
+    }
+
+    /**
+     *
+     * @param graph Graph
+     * @param visited besuchte Knoten
+     * @param node suchender Knoten
+     * @param goal Zielknoten
+     * @return node, wenn gefunden, null, wenn nicht
+     */
+    private Node DFS(Map<Node, Map<Node, Double>> graph, List<Node> visited, Node node, Node goal) {
+        // daran orientiert https://de.wikipedia.org/wiki/Tiefensuche#Algorithmen
+        visited.add(node);
+        if (node.equals(goal))
+            return node;
+        else {
+            Stack<Node> stack = new Stack<>();
+            for (Node node2 : graph.get(node).keySet()) {
+                if (!visited.contains(node2))
+                    stack.push(node2);
+            }
+            while (!stack.empty()) {
+                Node node3 = stack.pop();
+                DFS(graph, visited, node3, goal);
+            }
+            return null;
+        }
     }
 }

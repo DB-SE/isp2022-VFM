@@ -58,5 +58,10 @@ public class Main {
         graph4.print();
         graph4.removeNode("Berlin");
         graph4.print();
+        // Tiefensuche
+        System.out.println();
+        System.out.println(graph4.search_DFS("Magdeburg"));
+        System.out.println(graph4.search_DFS("Halle"));
+        System.out.println(graph4.search_DFS("Magdeburg555"));
     }
 }
