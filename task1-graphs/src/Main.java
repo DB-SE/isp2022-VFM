@@ -45,6 +45,11 @@ public class Main {
         graph3.print();
         graph3.removeNode(id3);
         graph3.print();
+        // Tiefensuche
+        System.out.println();
+        System.out.println(graph3.search_DFS(id1));
+        System.out.println(graph3.search_DFS(id2));
+        System.out.println(graph3.search_DFS(id1 + id2 + id3));
 
         // label, weight
         LabelWeightGraph graph4 = new LabelWeightGraph();

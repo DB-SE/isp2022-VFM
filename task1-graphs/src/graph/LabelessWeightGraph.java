@@ -20,4 +20,8 @@ public class LabelessWeightGraph extends Weight {
     public void removeEdge(String id1, String id2) { removeEdge(id1, id2, graph); }
 
     public void print() { print(graph); }
+
+    public Node search_DFS(String id) {
+        return search(graph, new Node(id));
+    }
 }
