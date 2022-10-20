@@ -19,6 +19,11 @@ public class Main {
         graph1.print();
         graph1.removeNode(nodeId3);
         graph1.print();
+        // Tiefensuche
+        System.out.println();
+        System.out.println(graph1.search_DFS(nodeId1));
+        System.out.println(graph1.search_DFS(nodeId2));
+        System.out.println(graph1.search_DFS(nodeId1 + nodeId2 + nodeId3));
 
         // label, no weight
         LabelWeightlessGraph graph2 = new LabelWeightlessGraph();

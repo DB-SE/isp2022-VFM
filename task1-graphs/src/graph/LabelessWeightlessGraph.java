@@ -21,4 +21,9 @@ public class LabelessWeightlessGraph extends Weightless {
     public void removeEdge(String id1, String id2) { removeEdge(id1, id2, graph); }
 
     public void print() { print(graph); }
+
+    public Node search_DFS(String name) {
+        return search(graph, new Node(name));
+    }
+
 }
