@@ -32,6 +32,11 @@ public class Main {
         graph2.print();
         graph2.removeNode("Berlin");
         graph2.print();
+        // Tiefensuche
+        System.out.println();
+        System.out.println(graph2.search_DFS("Magdeburg"));
+        System.out.println(graph2.search_DFS("Halle"));
+        System.out.println(graph2.search_DFS("Berlin"));
 
         // no label, weight
         LabelessWeightGraph graph3 = new LabelessWeightGraph();

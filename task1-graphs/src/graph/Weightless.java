@@ -1,9 +1,6 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Weightless {
 
@@ -41,5 +38,39 @@ public class Weightless {
             adjacencyVertices.forEach(adjacencyNode -> System.out.print(adjacencyNode.label + ", "));
         });
         System.out.println();
+    }
+
+    protected Node search(Map<Node, List<Node>> graph, Node goal) {
+        Node someNode = graph.entrySet().iterator().next().getKey();
+        return DFS(graph, new ArrayList<>(), someNode, goal);
+    }
+
+    /**
+     *
+     * @param graph Graph
+     * @param visited besuchte Knoten
+     * @param node suchender Knoten
+     * @param goal Zielknoten
+     * @return node, wenn gefunden, null, wenn nicht
+     */
+    private Node DFS(Map<Node, List<Node>> graph, List<Node> visited, Node node, Node goal) {
+        // daran orientiert https://de.wikipedia.org/wiki/Tiefensuche#Algorithmen
+        visited.add(node);
+        if (node.equals(goal))
+            return node;
+        else {
+            Stack<Node> stack = new Stack<>();
+            for (Node node2 : graph.get(node)) {
+                if (!visited.contains(node2))
+                    stack.push(node2);
+            }
+            while (!stack.empty()) {
+                Node node3 = stack.pop();
+                Node node4 = DFS(graph, visited, node3, goal);
+                if (node4 != null)
+                    return node4;
+            }
+            return null;
+        }
     }
 }
