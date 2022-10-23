@@ -1,9 +1,9 @@
-package graph;
+package graphs.data;
 
 import java.util.Objects;
 
 public class Node {
-    String label;
+    public String label;
 
     public Node(String label) {
         this.label = label;
