@@ -17,8 +17,6 @@ public class LabeledWeightedGraph extends WeightedGraph {
 
     public void removeEdge(String label1, String label2) { super.removeEdge(label1, label2); }
 
-    public void print() { super.print(); }
-
     public Boolean depthFirstSearch(String startLabel, String goalLabel) {
         return depthFirstSearch(new Node(startLabel), new Node(goalLabel));
     }
