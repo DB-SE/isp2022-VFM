@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/isp2022-VFM.iml" filepath="$PROJECT_DIR$/.idea/isp2022-VFM.iml" />
       <module fileurl="file://$PROJECT_DIR$/task1-graphs/task1-graphs.iml" filepath="$PROJECT_DIR$/task1-graphs/task1-graphs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task2-runtime_variability/task2-runtime_variability.iml" filepath="$PROJECT_DIR$/task2-runtime_variability/task2-runtime_variability.iml" />
     </modules>
   </component>
 </project>
