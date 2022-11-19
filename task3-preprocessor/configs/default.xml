@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-	<feature automatic="selected" name="task3preprocessor"/>
-	<feature manual="selected" name="Main"/>
+	<feature automatic="selected" name="Graph"/>
+	<feature manual="selected" name="Labeled"/>
+	<feature manual="selected" name="Weighted"/>
+	<feature manual="selected" name="Directed"/>
+	<feature manual="selected" name="Colored"/>
+	<feature automatic="selected" manual="selected" name="Algorithms"/>
+	<feature automatic="unselected" name="MST"/>
+	<feature manual="selected" name="DFS"/>
+	<feature manual="selected" name="MatrixExtraction"/>
 </configuration>

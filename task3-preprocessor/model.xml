@@ -11,8 +11,29 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<and abstract="true" mandatory="true" name="task3preprocessor">
-			<feature name="Main"/>
+		<and abstract="true" mandatory="true" name="Graph">
+			<feature name="Labeled"/>
+			<feature name="Weighted"/>
+			<feature name="Directed"/>
+			<feature name="Colored"/>
+			<and abstract="true" name="Algorithms">
+				<feature name="MST"/>
+				<feature name="DFS"/>
+				<feature name="MatrixExtraction"/>
+			</and>
 		</and>
 	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>MST</var>
+				<conj>
+					<var>Weighted</var>
+					<not>
+						<var>Directed</var>
+					</not>
+				</conj>
+			</imp>
+		</rule>
+	</constraints>
 </featureModel>
