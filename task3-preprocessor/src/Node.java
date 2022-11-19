@@ -5,15 +5,37 @@ public class Node {
 
     public String id;
     public String label;
+    public Color color;
+
 
     public Node(String label) {
-        this.label = label;
         this.id = UUID.randomUUID().toString();
+        this.label = label;
+        this.color = Color.GREEN;
+    }
+
+    public Node(Color color) {
+        this.id = UUID.randomUUID().toString();
+    	this.label = null;
+        this.color = color;
     }
 
     public Node(String label, String id) {
-        this.label = label;
         this.id = id;
+        this.label = label;
+        this.color = Color.GREEN;
+    }
+
+    public Node(String label, Color color) {
+        this.id = UUID.randomUUID().toString();
+        this.label = label;
+        this.color = color;
+    }
+
+    public Node(String label, String id, Color color) {
+        this.id = id;
+        this.label = label;
+        this.color = color;
     }
 
     @Override
@@ -32,9 +54,21 @@ public class Node {
     @Override
     public String toString() {
     	
-        	if(label == null) return id;
-        	return label;
+	    	
+	    	if(label == null)
+	    		return id;
+	    	return label;
+			
+
+
+		    
     	
+
+
+
+
+
+
 
 
     }

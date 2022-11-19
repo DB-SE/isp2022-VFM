@@ -8,7 +8,7 @@ public class MinimumSpanningTree {
 
     public Graph calculate(Map<Node, Map<Node, Double>> graph) {
 
-        graph.keySet().forEach(node -> minimumSpanningTree.addNode(node.label, node.id));
+        graph.keySet().forEach(node -> minimumSpanningTree.addNode(node.label, node.id, node.color));
 
         graph.forEach((node, adjacencyNodes) -> {
             final Optional<Map.Entry<Node, Double>>[] nearestNode = new Optional[]{adjacencyNodes.entrySet().stream().findFirst()};

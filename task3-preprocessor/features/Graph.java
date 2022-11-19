@@ -19,6 +19,24 @@ public class Graph {
         return node.id;
     }
 
+    public String addNode(String label, Color color) {
+        Node node = new Node(label, color);
+        data.putIfAbsent(node, new HashMap<>());
+        return node.id;
+    }
+
+    public String addNode(String label, String id, Color color) {
+        Node node = new Node(label, id, color);
+        data.putIfAbsent(node, new HashMap<>());
+        return node.id;
+    }
+
+    public String addNode(Color color) {
+        Node node = new Node(color);
+        data.putIfAbsent(node, new HashMap<>());
+        return node.id;
+    }
+
     public void removeNode(String id) {
         final Node[] node = new Node[1];
         data.keySet().forEach( key -> {
