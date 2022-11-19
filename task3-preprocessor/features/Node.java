@@ -8,6 +8,12 @@ public class Node {
     public Color color;
 
 
+    public Node() {
+        this.id = UUID.randomUUID().toString();
+        this.label = null;
+        this.color = Color.WHITE;
+    }
+
     public Node(String label) {
         this.id = UUID.randomUUID().toString();
         this.label = label;

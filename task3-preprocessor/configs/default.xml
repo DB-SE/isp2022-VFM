@@ -2,11 +2,11 @@
 <configuration>
 	<feature automatic="selected" name="Graph"/>
 	<feature manual="selected" name="Labeled"/>
-	<feature name="Weighted"/>
+	<feature manual="selected" name="Weighted"/>
 	<feature manual="selected" name="Directed"/>
-	<feature name="Colored"/>
-	<feature automatic="selected" manual="selected" name="Algorithms"/>
+	<feature manual="selected" name="Colored"/>
+	<feature automatic="selected" name="Algorithms"/>
 	<feature automatic="unselected" name="MST"/>
-	<feature manual="selected" name="DFS"/>
+	<feature name="DFS"/>
 	<feature manual="selected" name="MatrixExtraction"/>
 </configuration>

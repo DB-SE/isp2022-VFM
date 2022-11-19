@@ -7,6 +7,12 @@ public class Graph {
 
     public Graph() { data = new HashMap<>(); }
 
+    public String addNode() {
+        Node node = new Node();
+        data.putIfAbsent(node, new HashMap<>());
+        return node.id;
+    }
+
     public String addNode(String label) {
         Node node = new Node(label);
         data.putIfAbsent(node, new HashMap<>());
@@ -77,11 +83,10 @@ public class Graph {
     private Node findNode(String id){
         final Node[] node = new Node[1];
         data.keySet().forEach( key -> {
-            if (key.id == id) node[0] = new Node(key.label, key.id);
+            if (key.id == id) node[0] = new Node(key.label, key.id, key.color);
         });
         return node[0];
     }
-
 
     /*if[DFS]*/
     public Boolean depthFirstSearch(String startId, String goalId) {
@@ -107,4 +112,32 @@ public class Graph {
         });
         System.out.println();
     }
+    
+    /*if[MatrixExtraction]*/
+    public double[][] getAdjacencyMatrix() {
+    	int size = data.entrySet().size();
+    	Map<Integer, Node> node_to_index = new HashMap();
+    	int[] k = new int[1];
+    	k[0] = 0;
+    	data.forEach((node, adjacency) -> {
+    		node_to_index.put(k[0], node);
+    		k[0]++;
+    	});
+    	double[][] matrix = new double[size][size];
+    	for (int i = 0; i < size; i++) {
+    		for (int j = 0; j < size; j++) {
+				Double adj_node = data.get(node_to_index.get(i)).get(node_to_index.get(j));
+				if (adj_node != null)
+					/*if[Weighted]*/
+					matrix[i][j] = adj_node;
+					/*else[Weighted]*/
+					matrix[i][j] = 1;
+					/*end[Weighted]*/
+				else
+					matrix[i][j] = 0;
+    		}
+    	}
+    	return matrix;
+    }
+    /*end[MatrixExtraction]*/
 }

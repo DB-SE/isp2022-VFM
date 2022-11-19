@@ -8,10 +8,16 @@ public class Node {
     public Color color;
 
 
+    public Node() {
+        this.id = UUID.randomUUID().toString();
+        this.label = null;
+        this.color = Color.WHITE;
+    }
+
     public Node(String label) {
         this.id = UUID.randomUUID().toString();
         this.label = label;
-        this.color = Color.GREEN;
+        this.color = Color.WHITE;
     }
 
     public Node(Color color) {
@@ -23,7 +29,7 @@ public class Node {
     public Node(String label, String id) {
         this.id = id;
         this.label = label;
-        this.color = Color.GREEN;
+        this.color = Color.WHITE;
     }
 
     public Node(String label, Color color) {
@@ -54,23 +60,23 @@ public class Node {
     @Override
     public String toString() {
     	
+
+
+
+
+
+
+
+
+
 	    	
-	    	if(label == null)
-	    		return id;
-	    	return label;
-			
+	        	if(label == null)
+	        		return color + id + Color.RESET;
+	        	return color + label + Color.RESET;
+	    	
 
 
-		    
     	
-
-
-
-
-
-
-
-
     }
 }
 
