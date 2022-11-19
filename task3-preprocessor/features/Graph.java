@@ -31,14 +31,16 @@ public class Graph {
     public void addEdge(String id1, String id2) {
         Double weight = Double.MAX_VALUE;
         data.get(findNode(id1)).putIfAbsent(findNode(id2), weight);
-//        if (!config.directed)
-            data.get(findNode(id2)).putIfAbsent(findNode(id1), weight);
+		/*if_not[Directed]*/
+        data.get(findNode(id2)).putIfAbsent(findNode(id1), weight);
+    	/*end[Directed]*/
     }
 
     public void addEdge(String id1, String id2, Double weight) {
         data.get(findNode(id1)).putIfAbsent(findNode(id2), weight);
-//        if (!config.directed)
-            data.get(findNode(id2)).putIfAbsent(findNode(id1), weight);
+        /*if_not[Directed]*/
+        data.get(findNode(id2)).putIfAbsent(findNode(id1), weight);
+    	/*end[Directed]*/
     }
 
     protected void removeEdge(String id1, String id2) {
@@ -48,9 +50,10 @@ public class Graph {
         Map<Node, Double> adjacencyNodesOfNode2 = data.get(node2);
         if (adjacencyNodesOfNode1 != null)
             adjacencyNodesOfNode1.remove(node2);
-//        if (!config.directed)
-            if (adjacencyNodesOfNode2 != null)
-                adjacencyNodesOfNode2.remove(node1);
+        /*if_not[Directed]*/
+        if (adjacencyNodesOfNode2 != null)
+            adjacencyNodesOfNode2.remove(node1);
+        /*end[Directed]*/
     }
 
     private Node findNode(String id){
@@ -62,29 +65,27 @@ public class Graph {
     }
 
 
-
+    /*if[DFS]*/
     public Boolean depthFirstSearch(String startId, String goalId) {
-//        if (!config.depthFirstSearch)
-//            throw new RuntimeException();
-
         Node found = new DepthFirstSearch().depthFirstSearch(findNode(startId), findNode(goalId), data);
         return found != null;
     }
+    /*end[DFS]*/
 
+    /*if[MST]*/
     public Graph minimumSpanningTree() {
-//        if (config.minimumSpanningTree && config.weighted && !config.directed)
-            return new MinimumSpanningTree().calculate(data);
-
-//        throw new RuntimeException();
+        return new MinimumSpanningTree().calculate(data);
     }
+    /*end[MST]*/
 
     public void print() {
         data.forEach((node, adjacencyNodes) -> {
             System.out.print("\n" + node + " --> ");
-//            if (!config.weighted)
-                adjacencyNodes.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode + ", "));
-//            else
-//                adjacencyNodes.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode + "(" + weight + "), "));
+            /*if_not[Weighted]*/
+            adjacencyNodes.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode + ", "));
+            /*else[Weighted]*/
+            adjacencyNodes.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode + "(" + weight + "), "));
+            /*end[Weighted]*/
         });
         System.out.println();
     }

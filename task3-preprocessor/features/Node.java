@@ -31,11 +31,12 @@ public class Node {
 
     @Override
     public String toString() {
-//        if (config.labeled){
-//            if(label == null) return id;
-//            return label;
-//        }
+    	/*if[Labeled]*/
+        	if(label == null) return id;
+        	return label;
+    	/*else[Labeled]*/
         return id;
+    	/*end[Labeled]*/
     }
 }
 

@@ -4,9 +4,6 @@
 public class Main {
 	
 	public static void main(String[] args) {
-		
-		System.out.println("hello2");
-		
 		Graph graph = new Graph();
         String id1 = graph.addNode(null);
         String id2 = graph.addNode("test2");
@@ -18,7 +15,9 @@ public class Main {
         graph.addEdge(id2, id3);
         graph.addEdge(id3, id4);
         graph.print();
+        
         System.out.println(graph.depthFirstSearch(id2, id4));
+        
 
         Graph graph5 = new Graph();
         String idAA = graph5.addNode("A");
@@ -35,8 +34,9 @@ public class Main {
         graph5.addEdge(idCC, idEE, 1.0);
         graph5.addEdge(idDD, idEE);
         graph5.print();
+        
 
-        graph5.minimumSpanningTree().print();
+
 	}
 
 }

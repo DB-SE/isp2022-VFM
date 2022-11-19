@@ -31,14 +31,16 @@ public class Graph {
     public void addEdge(String id1, String id2) {
         Double weight = Double.MAX_VALUE;
         data.get(findNode(id1)).putIfAbsent(findNode(id2), weight);
-//        if (!config.directed)
-            data.get(findNode(id2)).putIfAbsent(findNode(id1), weight);
+		
+
+
     }
 
     public void addEdge(String id1, String id2, Double weight) {
         data.get(findNode(id1)).putIfAbsent(findNode(id2), weight);
-//        if (!config.directed)
-            data.get(findNode(id2)).putIfAbsent(findNode(id1), weight);
+        
+
+
     }
 
     protected void removeEdge(String id1, String id2) {
@@ -48,9 +50,10 @@ public class Graph {
         Map<Node, Double> adjacencyNodesOfNode2 = data.get(node2);
         if (adjacencyNodesOfNode1 != null)
             adjacencyNodesOfNode1.remove(node2);
-//        if (!config.directed)
-            if (adjacencyNodesOfNode2 != null)
-                adjacencyNodesOfNode2.remove(node1);
+        
+
+
+
     }
 
     private Node findNode(String id){
@@ -62,29 +65,27 @@ public class Graph {
     }
 
 
-
+    
     public Boolean depthFirstSearch(String startId, String goalId) {
-//        if (!config.depthFirstSearch)
-//            throw new RuntimeException();
-
         Node found = new DepthFirstSearch().depthFirstSearch(findNode(startId), findNode(goalId), data);
         return found != null;
     }
+    
 
-    public Graph minimumSpanningTree() {
-//        if (config.minimumSpanningTree && config.weighted && !config.directed)
-            return new MinimumSpanningTree().calculate(data);
+    
 
-//        throw new RuntimeException();
-    }
+
+
+
 
     public void print() {
         data.forEach((node, adjacencyNodes) -> {
             System.out.print("\n" + node + " --> ");
-//            if (!config.weighted)
-                adjacencyNodes.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode + ", "));
-//            else
-//                adjacencyNodes.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode + "(" + weight + "), "));
+            
+
+
+            adjacencyNodes.forEach((adjacencyNode, weight) -> System.out.print(adjacencyNode + "(" + weight + "), "));
+            
         });
         System.out.println();
     }
