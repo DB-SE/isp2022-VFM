@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Task4">
+			<and abstract="true" name="Print">
+				<feature name="print1Label"/>
+				<feature name="print2Color"/>
+				<feature name="print3Weight"/>
+			</and>
+			<and abstract="true" name="Direction">
+				<feature name="Directed"/>
+			</and>
+			<and abstract="true" name="Algorithms">
+				<feature name="MST"/>
+				<feature name="MatrixExtraction"/>
+			</and>
+			<and abstract="true" name="Search">
+				<feature name="DFS"/>
+				<feature name="BFS"/>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>MST</var>
+				<conj>
+					<var>print3Weight</var>
+					<not>
+						<var>Directed</var>
+					</not>
+				</conj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

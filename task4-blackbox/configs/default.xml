@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Task4"/>
+	<feature automatic="selected" manual="selected" name="Print"/>
+	<feature manual="selected" name="print1Label"/>
+	<feature manual="selected" name="print2Color"/>
+	<feature manual="selected" name="print3Weight"/>
+	<feature automatic="selected" manual="selected" name="Direction"/>
+	<feature manual="selected" name="Directed"/>
+	<feature automatic="selected" manual="selected" name="Algorithms"/>
+	<feature automatic="unselected" name="MST"/>
+	<feature manual="selected" name="MatrixExtraction"/>
+	<feature automatic="selected" manual="selected" name="Search"/>
+	<feature manual="selected" name="DFS"/>
+	<feature manual="selected" name="BFS"/>
+</configuration>
