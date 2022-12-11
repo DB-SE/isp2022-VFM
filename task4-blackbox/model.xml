@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
 	<properties>
-		<graphics key="legendautolayout" value="true"/>
+		<graphics key="legendposition" value="522,267"/>
+		<graphics key="legendautolayout" value="false"/>
 		<graphics key="showshortnames" value="false"/>
 		<graphics key="layout" value="horizontal"/>
 		<graphics key="showcollapsedconstraints" value="true"/>
@@ -9,34 +10,35 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<and abstract="true" mandatory="true" name="Task4">
-			<and abstract="true" name="Print">
-				<feature name="print1Label"/>
-				<feature name="print2Color"/>
-				<feature name="print3Weight"/>
+		<and abstract="true" mandatory="true" name="Graph">
+			<graphics key="collapsed" value="false"/>
+			<alt abstract="true" mandatory="true" name="Type">
+				<graphics key="collapsed" value="false"/>
+				<feature name="TypeDirected"/>
+				<feature name="TypeUndirected"/>
+			</alt>
+			<and abstract="true" name="Decorations">
+				<feature name="Decoration1Label"/>
+				<feature name="Decoration2Color"/>
+				<feature name="Decoration3Weight"/>
 			</and>
-			<and abstract="true" name="Direction">
-				<feature name="Directed"/>
-			</and>
-			<and abstract="true" name="Algorithms">
-				<feature name="MST"/>
-				<feature name="MatrixExtraction"/>
-			</and>
-			<and abstract="true" name="Search">
-				<feature name="DFS"/>
-				<feature name="BFS"/>
+			<alt abstract="true" name="Search">
+				<feature name="SearchDFS"/>
+				<feature name="SearchBFS"/>
+			</alt>
+			<and abstract="true" name="Transformations">
+				<feature name="TransformationMST"/>
+				<feature name="TransformationMatrixExtraction"/>
 			</and>
 		</and>
 	</struct>
 	<constraints>
 		<rule>
 			<imp>
-				<var>MST</var>
+				<var>TransformationMST</var>
 				<conj>
-					<var>print3Weight</var>
-					<not>
-						<var>Directed</var>
-					</not>
+					<var>Decoration3Weight</var>
+					<var>TypeUndirected</var>
 				</conj>
 			</imp>
 		</rule>
