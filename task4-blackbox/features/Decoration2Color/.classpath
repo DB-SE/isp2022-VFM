@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="lib" path="C:/Users/Volker/.jdks/temurin-16.0.2/lib/jrt-fs.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="/task4-blackbox"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
