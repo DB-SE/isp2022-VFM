@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendposition" value="522,267"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Graph">
+			<graphics key="collapsed" value="false"/>
+			<alt abstract="true" mandatory="true" name="Type">
+				<graphics key="collapsed" value="false"/>
+				<feature name="TypeDirected"/>
+				<feature name="TypeUndirected"/>
+			</alt>
+			<and abstract="true" name="Decorations">
+				<feature name="Decoration1Label"/>
+				<feature name="Decoration2Color"/>
+				<feature name="Decoration3Weight"/>
+			</and>
+			<alt abstract="true" name="Search">
+				<feature name="SearchDFS"/>
+				<feature name="SearchBFS"/>
+			</alt>
+			<and abstract="true" name="Transformations">
+				<feature name="TransformationMST"/>
+				<feature name="TransformationMatrixExtraction"/>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>TransformationMST</var>
+				<conj>
+					<var>Decoration3Weight</var>
+					<var>TypeUndirected</var>
+				</conj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

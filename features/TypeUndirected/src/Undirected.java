@@ -1,0 +1,14 @@
+import java.util.AbstractMap;
+import interfaces.Type;
+import data.GraphData;
+import data.Node;
+
+public class Undirected implements Type {
+
+	@Override
+	public void addEdge(Node node1, Node node2, Double weight, GraphData graph) {
+		graph.graphData.get(node1.id).getValue().add(new AbstractMap.SimpleEntry<>(node2, weight)); 
+        graph.graphData.get(node2.id).getValue().add(new AbstractMap.SimpleEntry<>(node1, weight)); 
+	}
+	
+}

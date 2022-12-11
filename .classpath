@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/Decoration3Weight.jar"/>
+	<classpathentry kind="lib" path="lib/SearchBFS.jar"/>
+	<classpathentry kind="lib" path="lib/TransformationMST.jar"/>
+	<classpathentry kind="lib" path="lib/TransformationMatrixExtraction.jar"/>
+	<classpathentry kind="lib" path="lib/TypeUndirected.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
