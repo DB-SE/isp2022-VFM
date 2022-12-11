@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/task4-blackbox.iml" filepath="$PROJECT_DIR$/task4-blackbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task4-blackbox-IntelliJ.iml" filepath="$PROJECT_DIR$/task4-blackbox-IntelliJ.iml" />
     </modules>
   </component>
 </project>
