@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="task5feature_house"/>
+	<feature automatic="selected" name="Graph"/>
+	<feature automatic="selected" name="Type"/>
+	<feature automatic="unselected" name="Directed"/>
+	<feature automatic="selected" manual="selected" name="Undirected"/>
+	<feature automatic="selected" manual="selected" name="Transformation"/>
+	<feature manual="selected" name="MST"/>
+	<feature manual="selected" name="MatrixExtrtaction"/>
+	<feature automatic="selected" manual="selected" name="Search"/>
+	<feature automatic="unselected" name="DFS"/>
+	<feature manual="selected" name="BFS"/>
+	<feature automatic="selected" name="Decorations"/>
+	<feature manual="selected" name="Label"/>
+	<feature name="Color"/>
+	<feature automatic="selected" name="Weight"/>
+</configuration>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="task5feature_house">
+			<feature mandatory="true" name="Graph"/>
+			<alt abstract="true" mandatory="true" name="Type">
+				<feature name="Directed"/>
+				<feature name="Undirected"/>
+			</alt>
+			<and abstract="true" name="Transformation">
+				<feature name="MST"/>
+				<feature name="MatrixExtrtaction"/>
+			</and>
+			<alt abstract="true" name="Search">
+				<feature name="DFS"/>
+				<feature name="BFS"/>
+			</alt>
+			<and abstract="true" name="Decorations">
+				<feature name="Label"/>
+				<feature name="Color"/>
+				<feature name="Weight"/>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>MST</var>
+				<conj>
+					<var>Weight</var>
+					<var>Undirected</var>
+				</conj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
